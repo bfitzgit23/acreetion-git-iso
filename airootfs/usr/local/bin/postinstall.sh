@@ -23,11 +23,11 @@
 #cp /cinnamon-configs/cinnamon-stuff/usr/bin/* /usr/bin/
 #cp -r /cinnamon-configs/cinnamon-stuff/usr/share/* /usr/share/
 
-mkdir /home/$name/.config
-mkdir /home/$name/.local
-mkdir /home/$name/Desktop
-mkdir /home/$name/Music
-mkdir /home/$name/.oh.my.zsh
+mkdir -p /home/$name/.config
+mkdir -p /home/$name/.local
+mkdir -p /home/$name/Desktop
+mkdir -p /home/$name/Music
+mkdir -p /home/$name/.oh.my.zsh
 
 #cp -r /cinnamon-configs/cinnamon-stuff/nemo/* /home/$name/.config/nemo
 
@@ -41,7 +41,7 @@ cp /root/.xinitrc /home/$name/.xinitrc
 cp /root/.xprofile /home/$name/.xprofile
 cp /root/.zshrc	   /home/$name/.zshrc
 
-mkdir /home/$name/.config/autostart
+mkdir -p /home/$name/.config/autostart
 
 cp -r /root/acreetionos-xfce.png /home/$name/acreetionos-xfce.png
 
