@@ -58,7 +58,6 @@ chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
 cp -r /root/.bashrc /home/$name/.bashrc
-cp -r /root/.bashrc /root
 cp -r /root/AcreetionOS.txt /root
 cp -r /root/AcreetionOS.txt /home/$name/AcreetionOS.txt
 
@@ -80,4 +79,6 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 plymouth-set-default-theme acreetionos-xfce
 
-rm -rf /home/$name/.config/autostart/calamares.desktop
+rm -rf /home/$USER/.config/autostart/calamares.desktop
+rm -rf /home/$USER/Desktop/calamares.desktop
+
