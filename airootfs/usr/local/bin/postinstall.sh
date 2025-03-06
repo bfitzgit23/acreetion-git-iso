@@ -27,13 +27,13 @@ mkdir -p /home/$name/.config
 mkdir -p /home/$name/.local
 mkdir -p /home/$name/Desktop
 mkdir -p /home/$name/Music
-mkdir -p /home/$name/.oh.my.zsh
+mkdir -p /home/$name/.oh-my-zsh
 
 #cp -r /cinnamon-configs/cinnamon-stuff/nemo/* /home/$name/.config/nemo
 
 cp -r /root/.config/* /home/$name/.config/
 cp -r /root/.local/* /home/$name/.local 
-cp -r /root/.oh.my.zsh/* /home/$name/.oh-my-zsh/*
+cp -r /root/.oh-my-zsh/* /home/$name/.oh-my-zsh/
 cp /root/.face /home/$name/.face
 cp /root/.nanorc /home/$name/.nanorc
 cp /root/.profile /home/$name/.profile
