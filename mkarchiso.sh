@@ -1,1 +1,1 @@
-mkarchiso -L AcreetionOS-xcfe -v -o ../ISO . --overwrite -j$nproc
+mkarchiso -L AcreetionOS-xfce -v -o ../ISO . --overwrite -j$nproc
