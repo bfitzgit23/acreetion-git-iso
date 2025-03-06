@@ -24,24 +24,45 @@
 #cp -r /cinnamon-configs/cinnamon-stuff/usr/share/* /usr/share/
 
 mkdir /home/$name/.config
-mkdir /home/$name/.config/nemo
+mkdir /home/$name/.local
+mkdir /home/$name/Desktop
+mkdir /home/$name/Music
+mkdir /home/$name/.oh.my.zsh
 
 #cp -r /cinnamon-configs/cinnamon-stuff/nemo/* /home/$name/.config/nemo
 
-cp -r /cinnamon-configs/cinnamon-stuff/.config/* /home/$name/.config/
+cp -r /root/.config/* /home/$name/.config/
+cp -r /root/.local/* /home/$name/.local 
+cp -r /root/.oh.my.zsh/* /home/$name/.oh-my-zsh/*
+cp /root/.face /home/$name/.face
+cp /root/.nanorc /home/$name/.nanorc
+cp /root/.profile /home/$name/.profile
+cp /root/.xinitrc /home/$name/.xinitrc
+cp /root/.xprofile /home/$name/.xprofile
+cp /root/.zshrc	   /home/$name/.zshrc
 
 mkdir /home/$name/.config/autostart
 
-cp -r /cinnamon-configs/dd.desktop /home/$name/.config/autostart
+cp -r /root/acreetionos-xfce.png /home/$name/acreetionos-xfce.png
+
+cp -r /root/.config/autostart/systemtool.desktop /home/$name/.config/autostart
 
 chown -R $name:$name /home/$name/.config
-chown -R $name:$name /middle.png
+chown -R $name:$name /home/$name/.local
+chown -R $name:$name /home/$name/Desktop
+chown -R $name:$name /home/$name/Music
+chown -R $name:$name /home/$name/.face
+chown -R $name:$name /home/$name/.nanorc
+chown -R $name:$name /home/$name/.profile
+chown -R $name:$name /home/$name/.xinitrc
+chown -R $name:$name /home/$name/.xprofile
+chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
-cp -r /cinnamon-configs/.bashrc /home/$name/.bashrc
-cp -r /cinnamon-configs/.bashrc /root
-cp -r /cinnamon-configs/AcreetionOS.txt /root
-cp -r /cinnamon-configs/AcreetionOS.txt /home/$name/AcreetionOS.txt
+cp -r /root/.bashrc /home/$name/.bashrc
+cp -r /root/.bashrc /root
+cp -r /root/AcreetionOS.txt /root
+cp -r /root/AcreetionOS.txt /home/$name/AcreetionOS.txt
 
 mv /resolv.conf /etc/resolv.conf
 chattr +i /etc/resolv.conf
@@ -59,3 +80,4 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 # cp -r /cinnamon-configs/cinnamon-stuff/extensions /home/$name/.local/share/cinnamon/
 
+plymouth-set-default-theme acreetionos-xfce

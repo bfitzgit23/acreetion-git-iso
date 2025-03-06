@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-desktop" version="1.0">
+  <property name="last-settings-migration-version" type="uint" value="1"/>
+  <property name="backdrop" type="empty">
+    <property name="single-workspace-mode" type="bool" value="false"/>
+    <property name="screen0" type="empty">
+      <property name="monitoreDP-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/backgrounds/Acreetion/split_3.png"/>
+          <property name="image-style" type="int" value="3"/>
+        </property>
+      </property>
+      <property name="monitor0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/backgrounds/Acreetion/split_3.png"/>
+        </property>
+      </property>
+      <property name="monitoreDP-1-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/backgrounds/Acreetion/split_3.png"/>
+          <property name="image-style" type="int" value="1"/>
+        </property>
+      </property>
+    </property>
+  </property>
+  <property name="last" type="empty">
+    <property name="window-width" type="int" value="802"/>
+    <property name="window-height" type="int" value="565"/>
+  </property>
+  <property name="desktop-icons" type="empty">
+    <property name="file-icons" type="empty">
+      <property name="show-removable" type="bool" value="false"/>
+      <property name="show-filesystem" type="bool" value="false"/>
+    </property>
+  </property>
+</channel>

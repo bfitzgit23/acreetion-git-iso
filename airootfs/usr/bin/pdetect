@@ -1,0 +1,234 @@
+#!/usr/bin/env python3
+
+import importlib.util
+import subprocess
+import sys
+import gi
+import os
+
+# Ensure GTK 3 is used
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
+def is_standard_module(module_name):
+    """Check if a module is part of the Python standard library."""
+    if module_name in sys.builtin_module_names:
+        return True
+    spec = importlib.util.find_spec(module_name)
+    if spec is None:
+        return False
+    return spec.origin == 'built-in' or 'site-packages' not in spec.origin
+
+def check_system_module(package_name, use_yay=False):
+    """Check if a package is available in Arch Linux repositories or AUR."""
+    try:
+        # Check if a package exists in the Arch Linux repository or AUR
+        search_cmd = ['yay', '-Qs', package_name] if use_yay else ['pacman', '-Qs', package_name]
+        print(f"Running command: {' '.join(search_cmd)}")
+        result = subprocess.run(search_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        print(f"Command output: {result.stdout}")
+        return bool(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print(f"Error checking system module: {e}")
+        return False
+
+def install_packages(packages, use_yay=False):
+    """Install packages using pacman or yay in a terminal emulator."""
+    try:
+        # Form the full install command
+        command = ['yay', '-S', '--noconfirm'] + packages if use_yay else ['sudo', 'pacman', '-S', '--noconfirm'] + packages
+
+        # Open the terminal emulator to run the command
+        terminal_commands = [
+            ['gnome-terminal', '--', 'bash', '-c', ' '.join(command) + '; exec bash'],
+            ['xfce4-terminal', '-e', 'bash -c "{}; exec bash"'.format(' '.join(command))],
+            ['xterm', '-e', 'bash -c "{}; exec bash"'.format(' '.join(command))]
+        ]
+
+        for cmd in terminal_commands:
+            try:
+                subprocess.run(cmd)
+                return True
+            except FileNotFoundError:
+                continue
+
+        print("No supported terminal emulator found.")
+        return False
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing packages: {e}")
+        return False
+
+def map_to_pacman_package(module):
+    """Map Python modules to Arch Linux packages."""
+    # This dictionary includes specific mappings for packages that may have different names in AUR
+    module_to_package = {
+        'numpy': 'python-numpy',
+        'pandas': 'python-pandas',
+        'matplotlib': 'python-matplotlib',
+        'requests': 'python-requests',
+        'flask': 'python-flask',
+        'speech_recognition': 'python-speechrecognition',
+        'gtts': 'python-gtts',
+        'translate': 'python-translate',
+        'PyQt5': 'python-pyqt5',
+        'PyQt5.QtWebEngineWidgets': 'python-pyqtwebengine',  # Add the specific mapping for QtWebEngineWidgets
+        # Add more mappings as needed
+    }
+    # Use a generic approach for most modules
+    return module_to_package.get(module, f'python-{module.lower()}')
+
+def check_modules(file_path):
+    """Check which modules are required and which are installed or missing."""
+    # Get a list of all pip-installed modules, suppressing deprecation warnings
+    pip_process = subprocess.Popen(['pip', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    pip_output, _ = pip_process.communicate()
+    pip_modules = pip_output.splitlines()
+    pip_modules = {line.split()[0].lower() for line in pip_modules[2:]}  # Skip headers
+
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    imports = set()
+    for line in lines:
+        if line.startswith('import ') or line.startswith('from '):
+            module = line.split()[1].split('.')[0]
+            # Ensure to capture complete PyQt5 submodules
+            if 'PyQt5' in line:
+                module = line.split()[1]
+            imports.add(module)
+
+    installed_packages = []
+    missing_packages = []
+    for module in imports:
+        print(f"Checking module: {module}")
+        # Check if it's a standard library module
+        if is_standard_module(module):
+            installed_packages.append(f"{module} (standard library)")
+            print(f"{module} is a standard library module.")
+        elif module.lower() in pip_modules:
+            installed_packages.append(f"{module} (pip-installed)")
+            print(f"{module} is installed via pip.")
+        else:
+            # Map the module to its corresponding Arch Linux package
+            package_name = map_to_pacman_package(module)
+            print(f"Mapped {module} to package {package_name}")
+            # Check if the package is installed via the system package manager or AUR
+            if check_system_module(package_name):
+                installed_packages.append(f"{module} (system package: {package_name})")
+                print(f"{package_name} is installed as a system package.")
+            elif check_system_module(package_name, use_yay=True):
+                # If not found in the official repo, check in the AUR
+                installed_packages.append(f"{module} (AUR package: {package_name})")
+                print(f"{package_name} is installed as an AUR package.")
+            else:
+                # If not found anywhere, mark as missing
+                missing_packages.append(package_name)
+                print(f"{package_name} is missing.")
+
+    return installed_packages, missing_packages
+
+class ModuleCheckApp(Gtk.Window):
+    def __init__(self):
+        super().__init__(title="Non-Pip Module Checker")
+        self.set_default_size(400, 300)
+
+        # Create a FileChooserButton to select Python script
+        file_button = Gtk.FileChooserButton(title="Select a Python Script", action=Gtk.FileChooserAction.OPEN)
+        file_button.set_filter(self.create_filter())
+        file_button.connect("file-set", self.on_file_selected)
+
+        # Create a TextView to display the result
+        self.text_view = Gtk.TextView()
+        self.text_view.set_editable(False)
+        self.text_view.set_wrap_mode(Gtk.WrapMode.WORD)
+        scrolled_window = Gtk.ScrolledWindow()
+        scrolled_window.add(self.text_view)
+
+        # Create an Install button
+        install_button = Gtk.Button(label="Install Missing Packages")
+        install_button.connect("clicked", self.on_install_button_clicked)
+
+        # Create a Launch button
+        launch_button = Gtk.Button(label="Launch Program")
+        launch_button.connect("clicked", self.on_launch_button_clicked)
+
+        # Create a VBox to pack widgets
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        vbox.pack_start(file_button, False, False, 0)
+        vbox.pack_start(scrolled_window, True, True, 0)
+        vbox.pack_start(install_button, False, False, 0)
+        vbox.pack_start(launch_button, False, False, 0)
+
+        self.add(vbox)
+
+        self.missing_packages = []  # To store missing packages
+        self.selected_file = None  # To store the selected file path
+
+    def create_filter(self):
+        filter_text = Gtk.FileFilter()
+        filter_text.set_name("Python Files")
+        filter_text.add_mime_type("text/x-python")
+        return filter_text
+
+    def on_file_selected(self, file_button):
+        file_path = file_button.get_filename()
+        self.selected_file = file_path  # Save the selected file path
+        installed_packages, missing_packages = check_modules(file_path)
+        
+        # Update missing packages list correctly
+        self.missing_packages = [pkg for pkg in missing_packages if "(not found)" not in pkg]
+
+        buffer = self.text_view.get_buffer()
+        result_text = "Installed packages and modules:\n"
+        result_text += "\n".join(f"- {pkg}" for pkg in installed_packages)
+        result_text += "\n\nMissing packages:\n"
+        result_text += "\n".join(f"- {pkg}" for pkg in missing_packages) if missing_packages else "None"
+
+        buffer.set_text(result_text)
+
+    def on_install_button_clicked(self, button):
+        """Handler for the Install button click."""
+        if self.missing_packages:
+            # Remove any "(not found)" text for the install command
+            packages_to_install = [pkg.split()[0] for pkg in self.missing_packages]
+            # Decide to use yay if necessary
+            use_yay = any(pkg.startswith('python-') for pkg in packages_to_install)
+            success = install_packages(packages_to_install, use_yay=use_yay)
+            if success:
+                self.text_view.get_buffer().set_text("All missing packages have been installed.")
+            else:
+                self.text_view.get_buffer().set_text("Failed to install some packages. Check the terminal for details.")
+        else:
+            self.text_view.get_buffer().set_text("No missing packages to install.")
+
+    def on_launch_button_clicked(self, button):
+        """Handler for the Launch Program button click."""
+        if self.selected_file:
+            try:
+                # Make the script executable if it's not already
+                subprocess.run(['chmod', '+x', self.selected_file])
+                # Open a terminal emulator to run the program
+                terminal_commands = [
+                    ['gnome-terminal', '--', 'bash', '-c', f'"{self.selected_file}"; exec bash'],
+                    ['xfce4-terminal', '-e', f'bash -c "{self.selected_file}; exec bash"'],
+                    ['xterm', '-e', f'bash -c "{self.selected_file}; exec bash"']
+                ]
+
+                for cmd in terminal_commands:
+                    try:
+                        subprocess.run(cmd)
+                        return
+                    except FileNotFoundError:
+                        continue
+
+                print("No supported terminal emulator found.")
+            except Exception as e:
+                print(f"Error launching program: {e}")
+        else:
+            self.text_view.get_buffer().set_text("No program selected to launch.")
+
+if __name__ == "__main__":
+    win = ModuleCheckApp()
+    win.connect("destroy", Gtk.main_quit)
+    win.show_all()
+    Gtk.main()

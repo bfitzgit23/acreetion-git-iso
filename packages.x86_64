@@ -156,7 +156,7 @@ glu
 #calamaresos
 #calamares
 calamares-git
-calamares-config
+calamares-config-xfce
 #gnome-disk-utility
 # fastfetch
 # cinnamon-configs
@@ -197,7 +197,7 @@ nettle
 # systemd-resolvconf
 yaml-cpp
 libpwquality
-gnome-terminal
+xfce4-terminal
 python
 python-six
 python-pam
@@ -218,3 +218,4 @@ xfce4-pulseaudio-plugin
 xfce4-power-manager
 xfce4-indicator-plugin
 thunar-shares-plugin
+oh-my-zsh-git

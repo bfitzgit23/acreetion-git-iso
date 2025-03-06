@@ -1,6 +1,0 @@
-#!/bin/sh
-
-export GI_TYPELIB_PATH="/usr/lib/cinnamon:/usr/lib/muffin"
-export LD_LIBRARY_PATH="/usr/lib/cinnamon:/usr/lib/muffin"
-
-exec /usr/lib/cinnamon/cinnamon-calendar-server.py $@
