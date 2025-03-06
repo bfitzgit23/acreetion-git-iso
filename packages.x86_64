@@ -130,7 +130,7 @@ xdg-user-dirs-gtk
 xorg
 lightdm
 lightdm-gtk-greeter
-#pipewire
+pipewire
 pipewire-pulse
 wireplumber
 pavucontrol
@@ -165,6 +165,7 @@ cups
 kpmcore
 electron31
 networkmanager
+network-manager-applet
 # samba
 # vlc
 #yay-bin
@@ -219,3 +220,5 @@ xfce4-power-manager
 xfce4-indicator-plugin
 thunar-shares-plugin
 oh-my-zsh-git
+blueman
+papirus-icon-theme

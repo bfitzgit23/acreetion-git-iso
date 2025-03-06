@@ -45,8 +45,6 @@ mkdir -p /home/$name/.config/autostart
 
 cp -r /root/acreetionos-xfce.png /home/$name/acreetionos-xfce.png
 
-cp -r /root/.config/autostart/systemtool.desktop /home/$name/.config/autostart
-
 chown -R $name:$name /home/$name/.config
 chown -R $name:$name /home/$name/.local
 chown -R $name:$name /home/$name/Desktop
@@ -81,3 +79,5 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 # cp -r /cinnamon-configs/cinnamon-stuff/extensions /home/$name/.local/share/cinnamon/
 
 plymouth-set-default-theme acreetionos-xfce
+
+rm -rf /home/$name/.config/autostart/calamares.desktop
