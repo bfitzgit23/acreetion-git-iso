@@ -4,5 +4,5 @@ Description=Sleek boot up progress bar
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/acreetions-xfce/assets
-ScriptFile=/usr/share/plymouth/themes/acreetions-xfce/assets/acreetions-xfce.script
+ImageDir=/usr/share/plymouth/themes/acreetionos-xfce/assets
+ScriptFile=/usr/share/plymouth/themes/acreetionos-xfce/assets/acreetionos-xfce.script
