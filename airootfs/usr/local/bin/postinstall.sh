@@ -80,6 +80,6 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 plymouth-set-default-theme acreetionos-xfce
 
-rm -rf `/home/$name/.config/autostart/calamares.desktop
+rm -rf /home/$name/.config/autostart/calamares.desktop
 rm /home/$name/Desktop/calamares.desktop
 rm -rf /usr/share/applications/calamares.desktop
