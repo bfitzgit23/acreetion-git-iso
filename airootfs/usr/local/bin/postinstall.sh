@@ -28,6 +28,7 @@ mkdir -p /home/$name/.local
 mkdir -p /home/$name/Desktop
 mkdir -p /home/$name/Music
 mkdir -p /home/$name/.oh-my-zsh
+mkdir -p /home/$name/.fastfetch
 
 #cp -r /cinnamon-configs/cinnamon-stuff/nemo/* /home/$name/.config/nemo
 
@@ -40,6 +41,7 @@ cp /root/.profile /home/$name/.profile
 cp /root/.xinitrc /home/$name/.xinitrc
 cp /root/.xprofile /home/$name/.xprofile
 cp /root/.zshrc	   /home/$name/.zshrc
+cp -r /root/.fastfetch/* /home/$name/.fastfetch/
 
 mkdir -p /home/$name/.config/autostart
 
@@ -57,8 +59,8 @@ chown -R $name:$name /home/$name/.xprofile
 chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
-cp -r /root/.bashrc /home/$name/.bashrc
-cp -r /root/AcreetionOS.txt /home/$name/AcreetionOS.txt
+cp /root/.bashrc /home/$name/.bashrc
+cp /root/AcreetionOS.txt /home/$name/AcreetionOS.txt
 chown -R $name:$name /home/$name/.bashrc
 chown -R $name:$name /home/$name/AcreetionOS.txt
 
