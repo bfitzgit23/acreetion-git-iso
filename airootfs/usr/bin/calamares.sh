@@ -1,3 +1,5 @@
+wifi-connection.sh
+
 pacman -Sy 
 
 sudo pacman -S calamares-config-xfce --noconfirm --overwrite '*'
