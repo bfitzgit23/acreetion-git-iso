@@ -72,6 +72,7 @@ nilfs-utils
 nmap
 ntfs-3g
 nvme-cli
+networkmanager
 os-prober
 open-iscsi
 open-vm-tools
@@ -88,7 +89,7 @@ pptpclient
 plymouth
 pv
 qemu-guest-agent
-reflector
+#reflector
 rp-pppoe
 rsync
 sdparm
