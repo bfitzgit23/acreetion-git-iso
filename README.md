@@ -1,10 +1,10 @@
-# AcreetionOS Linux
+# StormOS Linux
 
-Welcome to AcreetionOS Linux, an open-source project aimed at providing the user a stable and up-to-date experience.
+Welcome to StormOS Linux, an open-source project aimed at providing the user a stable and up-to-date experience.
 
 ## Project Overview
 
-AcreetionOS Linux is a community-driven effort to build a lightweight, versatile Linux distribution. AcreetionOS Linux is currently based on Arch Linux, but the future goal is to be a parallel* distribution with our own base. Our goal is to provide a solid foundation for both everyday users and developers, with a focus on simplicity, ease of use, and stability; all while keeping packages up to date.
+StormOS Linux is a community-driven effort to build a lightweight, versatile Linux distribution. StormOS Linux is currently based on Arch Linux, but the future goal is to be a parallel* distribution with our own base. Our goal is to provide a solid foundation for both everyday users and developers, with a focus on simplicity, ease of use, and stability; all while keeping packages up to date.
 
 ## Features
 
@@ -15,7 +15,7 @@ AcreetionOS Linux is a community-driven effort to build a lightweight, versatile
 
 ## Getting Started
 
-To get started with AcreetionOS Linux, you can:
+To get started with StormOS Linux, you can:
 
 1. Download the latest ISO from our [Website]("AcreetionOSWebsite link")!
 2. Create a bootable USB drive using tools like [Etcher]("https://etcher.balena.io/#download-etcher"), [Rufus]("https://rufus.ie/en/"), or [Ventoy]("https://ventoy.net/en/index.html").
@@ -34,7 +34,7 @@ Our current goal is to release a stable distribution by the end of 2026. Check o
 
 - **Project Status:** In active development
 - **License:** GPL-3.0
-- **Maintainers:** Darren Clift (@cobra3282000), Johnathan Spiva (@sprunglesongithub) or (@Sprungles)
+- **Maintainers:** **Bennji (Ben Fitzpatrick) (bfitzgit23), Seeker (rport99), Ricki Clay (yugiohmaster88)
 
 
 ## Contact
