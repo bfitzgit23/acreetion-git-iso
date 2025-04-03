@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="AcreetionOS-xfce"
-iso_label="acreetionOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="Acreetion OS"
-iso_application="Acreetion OS Install Media"
-iso_version="1.0"
+iso_name="StormOS"
+iso_label="StormOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_publisher="StormOS"
+iso_application="StormOS Install Media"
+iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
