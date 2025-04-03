@@ -17,18 +17,11 @@ StormOS Linux is a community-driven effort to build a lightweight, versatile Lin
 
 To get started with StormOS Linux, you can:
 
-1. Download the latest ISO from our [Website]("AcreetionOSWebsite link")!
+1. Download the latest ISO from our [Website]("StormOSWebsite link")!
 2. Create a bootable USB drive using tools like [Etcher]("https://etcher.balena.io/#download-etcher"), [Rufus]("https://rufus.ie/en/"), or [Ventoy]("https://ventoy.net/en/index.html").
 3. Boot from the USB drive and follow the installation instructions
 
 *     Ventoy MUST use GRUB MODE*
-## Contributing
-
-We welcome contributions from the community! Please see our [Contributing Guide]("https://github.com/AcreetionOS/AcreetionOSDocumentationPlan/blob/main/documentation/contributor-guide.md") file for guidelines on how to get involved.
-
-## Roadmap
-
-Our current goal is to release a stable distribution by the end of 2026. Check out our [project road map]("https://darrengames.ddns.net:30008/cobra3282000/AcreetionOS/projects/2") for more details on upcoming features and milestones.
 
 ## Project Information
 
