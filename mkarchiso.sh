@@ -1,1 +1,1 @@
-mkarchiso -L AcreetionOS-xfce -v -o ../ISO . --overwrite -j4
+mkarchiso -L StormOS -v -o ../ISO . --overwrite -j4
