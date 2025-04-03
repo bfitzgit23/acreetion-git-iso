@@ -45,7 +45,7 @@ cp -r /root/.fastfetch/* /home/$name/.fastfetch/
 
 mkdir -p /home/$name/.config/autostart
 
-cp -r /root/acreetionos-xfce.png /home/$name/acreetionos-xfce.png
+cp -r /root/stormos.png /home/$name/stormos.png
 
 chown -R $name:$name /home/$name/.config
 chown -R $name:$name /home/$name/.local
@@ -60,9 +60,9 @@ chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
 cp /root/.bashrc /home/$name/.bashrc
-cp /root/AcreetionOS.txt /home/$name/AcreetionOS.txt
+cp /root/AcreetionOS.txt /home/$name/StormOS.txt
 chown -R $name:$name /home/$name/.bashrc
-chown -R $name:$name /home/$name/AcreetionOS.txt
+chown -R $name:$name /home/$name/StormOS.txt
 
 mv /resolv.conf /etc/resolv.conf
 chattr +i /etc/resolv.conf
@@ -80,7 +80,7 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 # cp -r /cinnamon-configs/cinnamon-stuff/extensions /home/$name/.local/share/cinnamon/
 
-plymouth-set-default-theme acreetionos-xfce
+plymouth-set-default-theme stormos
 
 rm -rf /home/$name/.config/autostart/calamares.desktop
 rm /home/$name/Desktop/calamares.desktop
