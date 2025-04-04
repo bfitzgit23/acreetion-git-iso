@@ -60,7 +60,7 @@ chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
 cp /root/.bashrc /home/$name/.bashrc
-cp /root/AcreetionOS.txt /home/$name/StormOS.txt
+cp /root/StormOS.txt /home/$name/StormOS.txt
 chown -R $name:$name /home/$name/.bashrc
 chown -R $name:$name /home/$name/StormOS.txt
 
