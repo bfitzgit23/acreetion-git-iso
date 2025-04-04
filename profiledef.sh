@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="StormOS"
-iso_label="StormOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_label="StormOS"
 iso_publisher="StormOS"
 iso_application="StormOS Install Media"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="1.0"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
