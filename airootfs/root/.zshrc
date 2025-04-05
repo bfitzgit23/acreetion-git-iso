@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
-fastfetch -l ~/.fastfetch/AcreetionOS.txt
+fastfetch
 
 # Set-up icons for files/folders in terminal
 alias ls='eza -a --icons'

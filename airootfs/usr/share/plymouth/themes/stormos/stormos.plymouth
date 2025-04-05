@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=StormOS Plymouth
+Description=Sleek boot up progress bar
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/stormos/assets
+ScriptFile=/usr/share/plymouth/themes/stormos/assets/stormos.script

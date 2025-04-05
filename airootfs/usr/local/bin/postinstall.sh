@@ -27,21 +27,19 @@ mkdir -p /home/$name/.config
 mkdir -p /home/$name/.local
 mkdir -p /home/$name/Desktop
 mkdir -p /home/$name/Music
-mkdir -p /home/$name/.oh-my-zsh
-mkdir -p /home/$name/.fastfetch
+mkdir -p /home/$name/.oh-my-bash
 
 #cp -r /cinnamon-configs/cinnamon-stuff/nemo/* /home/$name/.config/nemo
 
 cp -r /root/.config/* /home/$name/.config/
 cp -r /root/.local/* /home/$name/.local 
-cp -r /root/.oh-my-zsh/* /home/$name/.oh-my-zsh/
+cp -r /usr/share/oh-my-bash/* /home/$name/.oh-my-bash/
 cp /root/.face /home/$name/.face
 cp /root/.nanorc /home/$name/.nanorc
 cp /root/.profile /home/$name/.profile
 cp /root/.xinitrc /home/$name/.xinitrc
 cp /root/.xprofile /home/$name/.xprofile
-cp /root/.zshrc	   /home/$name/.zshrc
-cp -r /root/.fastfetch/* /home/$name/.fastfetch/
+cp /root/.bashrc   /home/$name/.zshrc
 
 mkdir -p /home/$name/.config/autostart
 
@@ -60,9 +58,7 @@ chown -R $name:$name /home/$name/.zshrc
 #mv /middle.png /home/$USER
 
 cp /root/.bashrc /home/$name/.bashrc
-cp /root/StormOS.txt /home/$name/StormOS.txt
-chown -R $name:$name /home/$name/.bashrc
-chown -R $name:$name /home/$name/StormOS.txt
+chown -R $name:$name /home/$name/.bashrct
 
 mv /resolv.conf /etc/resolv.conf
 chattr +i /etc/resolv.conf

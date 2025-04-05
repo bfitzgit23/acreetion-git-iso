@@ -4,13 +4,6 @@
 configs:
 - level: 0
   monitors:
-  - id: "d2eb661d71fdd750dc062f63b961adf7e02bb533"
-    display_name: "Najing CEC Panda FPD Technology CO. ltd 0x004D (eDP-1-1)"
-    geometry:
-      x: 0
-      y: 0
-      width: 1920
-      height: 1080
   - id: "bd4586e4497d69c4858f7e8bf6d6f8c31b59d3a3"
     display_name: "Najing CEC Panda FPD Technology CO. ltd 0x004D (eDP-1)"
     geometry:
@@ -18,61 +11,150 @@ configs:
       y: 0
       width: 1920
       height: 1080
+  - id: "ce3e162d19b5d88b0a753bf401ade6843cf9f898"
+    display_name: "Chimei Innolux Corporation 0x175C (eDP-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
   icons:
-    "trash:///":
-      row: 8
-      col: 17
-    "/home/bennji/Desktop/SWG Hunted Launcher.desktop":
-      row: 1
-      col: 0
-    "4E21-0000":
-      row: 3
-      col: 0
-      last_seen: 1740794850250283
-    "/home/bennji/Desktop/Force_Wanderer":
-      row: 3
-      col: 0
-    "/home/bennji/Desktop/SWGLegendsLauncher":
-      row: 1
-      col: 1
-    "/home/bennji/Desktop/SWG Beyond.desktop":
+    "/home/test/Desktop/StormOS_Python_Manager.desktop":
       row: 0
-      col: 1
-    "8ED45B72D45B5B91":
+      col: 0
+    "/home/liveuser/Desktop/StormOS_Python_Manager.desktop":
       row: 4
       col: 0
-      last_seen: 1740794850252115
-    "/home/bennji/Desktop/Beyond":
+    "/home/test/Desktop/StormOS_Recorder.desktop":
+      row: 1
+      col: 1
+    "/home/test/Desktop/system-tool.desktop":
+      row: 3
+      col: 0
+    "/home/liveuser/Desktop/calamares.desktop":
+      row: 1
+      col: 0
+    "/home/ben/Desktop/StormOS_Download_Manager.desktop":
       row: 2
       col: 0
-    "/home/bennji/Desktop/win backupss":
+    "/home/liveuser/Desktop/StormOS_mirrors.desktop":
       row: 2
       col: 0
-    "/home/bennji/Desktop/win backups":
+    "/home/test/Desktop/StormOS-ISO":
+      row: 5
+      col: 0
+    "/home/ben/Desktop/StormOS_Browser.desktop":
+      row: 1
+      col: 0
+    "/home/ben/Desktop/stormos-kernel-manager.desktop":
+      row: 4
+      col: 0
+    "/home/liveuser/Desktop/system-tool.desktop":
+      row: 1
+      col: 1
+    "/home/ben/Desktop/StormOS_Recorder.desktop":
+      row: 8
+      col: 0
+    "/home/test/Desktop/stormos-kernel-manager.desktop":
+      row: 1
+      col: 0
+    "/home/liveuser/Desktop/StormOS_Nvidia_Launcher.desktop":
+      row: 5
+      col: 0
+    "/home/test/Desktop/StormOS_Download_Manager.desktop":
+      row: 0
+      col: 1
+    "/home/ben/Desktop/StormOS_Nvidia_Launcher.desktop":
       row: 6
       col: 0
-    "/":
-      row: 1
-      col: 0
-    "/home/bennji/Desktop/steam.desktop":
-      row: 8
-      col: 0
-    "/home/bennji/Desktop/SWG-Hunted-Launcher":
-      row: 5
-      col: 0
-    "/home/bennji":
+    "/home/liveuser/Desktop/stormos-kernel-manager.desktop":
       row: 0
       col: 0
-    "/home/bennji/Desktop/Hunted":
-      row: 4
+    "/home/liveuser/Desktop/StormOS ISO Builder.desktop":
+      row: 8
       col: 0
-    "BE3CC5963CC54A5B":
-      row: 5
+    "/home/ben/Desktop/StomOS Package Manager.desktop":
+      row: 0
       col: 0
-      last_seen: 1740794850255234
-    "/home/bennji/Desktop/lfs-backup-main.tar.gz":
+    "/home/ben/Desktop/abif.desktop":
+      row: 1
+      col: 0
+    "/home/liveuser/Desktop/StormOS_Browser.desktop":
       row: 7
       col: 0
-    "/home/bennji/Desktop/SWG Beyond.lnk":
+    "/home/ben/Desktop/StormOS_mirrors.desktop":
+      row: 5
+      col: 0
+    "/home/test/Desktop/StormOS_mirrors.desktop":
+      row: 2
+      col: 0
+    "/home/ben/Desktop/StormOS_Python_Manager.desktop":
+      row: 7
+      col: 0
+    "/home/ben/Desktop/StormOS ISO Builder.desktop":
+      row: 3
+      col: 0
+    "/home/ben/Desktop/system-tool.desktop":
+      row: 0
+      col: 1
+    "/home/ben/Desktop/calamares.desktop":
+      row: 0
+      col: 1
+    "/home/liveuser/Desktop/StormOS_Download_Manager.desktop":
+      row: 6
+      col: 0
+    "/home/test/Desktop/StomOS Package Manager.desktop":
+      row: 4
+      col: 0
+    "/home/test/Desktop/stormos-build-files":
+      row: 6
+      col: 0
+    "/home/liveuser/Desktop/StomOS Package Manager.desktop":
+      row: 0
+      col: 1
+    "/home/liveuser/Desktop/StormOS_Recorder.desktop":
+      row: 3
+      col: 0
+- level: 0
+  monitors:
+  - id: "4550db14c24f235dbb09f1e861f2c9645e77dcd4"
+    display_name: "Apple Computer Inc 0x9CC5 (LVDS-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1280
+      height: 800
+  icons:
+    "/home/ricki/Desktop/stormos-build-files":
+      row: 2
+      col: 1
+    "/home/ricki/Desktop/StormOS_Download_Manager.desktop":
+      row: 2
+      col: 0
+    "/home/ricki/Desktop/stormos-kernel-manager.desktop":
+      row: 3
+      col: 0
+    "/home/ricki/Desktop/StormOS_mirrors.desktop":
+      row: 4
+      col: 0
+    "/home/ricki/Desktop/system-tool.desktop":
+      row: 0
+      col: 1
+    "/home/ricki/Desktop/StormOS_Recorder.desktop":
+      row: 6
+      col: 0
+    "/home/ricki/Desktop/StormOS_Python_Manager.desktop":
+      row: 5
+      col: 0
+    "/home/ricki/Desktop/StomOS Package Manager.desktop":
+      row: 1
+      col: 0
+    "/home/ricki/Desktop/Guvcview.desktop":
+      row: 0
+      col: 0
+    "/home/ricki/Desktop/StormOS-ISO":
       row: 1
       col: 1
+    "/home/ricki/Desktop/StormOS-Pescado-XFCE-2024.12.26-x86_64.iso":
+      row: 0
+      col: 4
