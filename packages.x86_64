@@ -83,6 +83,7 @@ openvpn
 partclone
 parted
 partimage
+preload
 pcsclite
 ppp
 pptpclient
@@ -221,14 +222,12 @@ xfce4-pulseaudio-plugin
 xfce4-power-manager
 xfce4-indicator-plugin
 thunar-shares-plugin
-oh-my-zsh-git
 blueman
 fastfetch
 fzf
-stormos-conf
-stormos-xfce-grub-theme
+StormOS-conf
+stormos-grub-theme
 pamac-aur-git
 compiz-easy-patch
-adw-gtk3-theme-git
-qt5=webkit
+adw-gtk-theme-git
 

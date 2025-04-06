@@ -361,10 +361,10 @@ _make_custom_airootfs() {
 _make_packages() {
     _msg_info "Installing packages to '${pacstrap_dir}/'..."
 
-    if [[ -v gpg_publickey ]]; then
-        exec {ARCHISO_GNUPG_FD}<"$gpg_publickey"
-        export ARCHISO_GNUPG_FD
-    fi
+    #if [[ -v gpg_publickey ]]; then
+    #    exec {ARCHISO_GNUPG_FD}<"$gpg_publickey"
+    #    export ARCHISO_GNUPG_FD
+    #fi
     if [[ -v cert_list[0] ]]; then
         exec {ARCHISO_TLS_FD}<"${cert_list[0]}"
         export ARCHISO_TLS_FD
@@ -377,9 +377,9 @@ _make_packages() {
 
     # Unset TMPDIR to work around https://bugs.archlinux.org/task/70580
     if [[ "${quiet}" = "y" ]]; then
-        env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}" &>/dev/null
+        env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" --skipinteg -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}" &>/dev/null
     else
-        env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}"
+        env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" --skipinteg -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}"
     fi
 
     if [[ -v cert_list[0] ]]; then
