@@ -39,7 +39,7 @@ cp /root/.nanorc /home/$name/.nanorc
 cp /root/.profile /home/$name/.profile
 cp /root/.xinitrc /home/$name/.xinitrc
 cp /root/.xprofile /home/$name/.xprofile
-cp /root/.bashrc   /home/$name/.zshrc
+cp /root/.bashrc /home/$name/.bashrc
 
 mkdir -p /home/$name/.config/autostart
 
@@ -54,7 +54,7 @@ chown -R $name:$name /home/$name/.nanorc
 chown -R $name:$name /home/$name/.profile
 chown -R $name:$name /home/$name/.xinitrc
 chown -R $name:$name /home/$name/.xprofile
-chown -R $name:$name /home/$name/.zshrc
+chown -R $name:$name /home/$name/.bashrc
 #mv /middle.png /home/$USER
 
 cp /root/.bashrc /home/$name/.bashrc
