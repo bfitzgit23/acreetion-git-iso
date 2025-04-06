@@ -1,5 +1,5 @@
-NAME="Acreetion-OS-XFCE-v0.1"
-PRETTY_NAME="Acreetion Linux"
+NAME="StormOS-v1.0"
+PRETTY_NAME="StormOS Linux"
 ID=acreetion
 BUILD_ID=rolling
 ANSI_COLOR="38;2;23;147;209"
