@@ -82,4 +82,6 @@ rm -rf /home/$name/.config/autostart/calamares.desktop
 rm /home/$name/Desktop/calamares.desktop
 rm -rf /usr/share/applications/calamares.desktop
 
-keyfix
+rm -rf /etc/pacman.d/gnupg/*
+pacman-key --init
+pacman-key --populate archlinux
