@@ -78,9 +78,6 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 plymouth-set-default-theme stormos
 
-rm /home/$name/Desktop/calamares.desktop
-rm -rf /usr/share/applications/calamares.desktop
-
 rm -rf /etc/pacman.d/gnupg/*
 pacman-key --init
 pacman-key --populate archlinux
