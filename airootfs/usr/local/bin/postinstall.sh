@@ -78,7 +78,6 @@ cp /archiso.conf /etc/mkinitcpio.conf.d/archiso.conf
 
 plymouth-set-default-theme stormos
 
-rm -rf /home/$name/.config/autostart/calamares.desktop
 rm /home/$name/Desktop/calamares.desktop
 rm -rf /usr/share/applications/calamares.desktop
 
